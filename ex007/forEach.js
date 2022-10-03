@@ -1,4 +1,4 @@
-/*
+
 let paises = ["Brasil", "Peru", "Uruguai", "Chile", "Argentina"];
 
 
@@ -27,9 +27,10 @@ console.log(
   })
 );
 
-*/
 
-const notaGui = [7, 8, 7, 5, 4, 6, 7, 8, 9, 8, 7, 8];
+
+// Reduce
+const notaGui = [7, 8, 7, 5, 4, 6, 7, 8, 9, 8, 7, 8]; // Somou cada item com o reduce
 
 const notaFinal = notaGui.reduce(function (total, valor) {
   return total + valor;
