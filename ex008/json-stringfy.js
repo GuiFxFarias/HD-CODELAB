@@ -10,4 +10,4 @@ const pessoa = {
 
 console.log(pessoa);
 console.log(pessoa.mostrarNome())
-console.log(JSON.stringify(pessoa, null, 4)); // Transforma em uma string
+console.log(JSON.stringify(pessoa)); // Transforma em uma string
