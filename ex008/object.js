@@ -14,7 +14,7 @@ const union = Object.assign(user, person, {
   nome: "MANUELA-SAMA",
 });
 
-//console.log(union); ----
+// console.log(typeof union);
 
 //console.log(Object.keys(union)); ---- // Object keys
 
@@ -27,5 +27,5 @@ console.log("----------------------------");
 
 // Another method for use
 for (let key in union) {
-  console.log(union[key]);
+  console.log(key);
 }
