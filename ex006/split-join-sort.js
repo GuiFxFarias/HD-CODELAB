@@ -10,7 +10,8 @@ nomes.sort().reverse(); // reverse structure
 
 let message = "Welcome back home";
 
+message = message.split(""); //change a string for a array
 
-message = message.split("").reverse(); //change a string for a array
+console.log(message);
 
-console.log(message.join("")); //change a array for a string
+// console.log(message.join("")); //change a array for a string
