@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #caixa {
+        width: 200px;
+        height: 200px;
+        background-color: rebeccapurple;
+        border: 1px solid black;
+      }
+
+      .nota-vermelha {
+        color: red;
+      }
+
+      .nota-verde {
+        color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="caixa0"></div>
+    <div id="caixa">
+      <form action="">
+        <input type="text" name="nome" id="inome" />
+        <input type="button" value="Enviar" />
+      </form>
+      <h2>Sua nota foi de <span>70%</span></h2>
+    </div>
+
+    <script>
+      // document.getElementsByTagName("div")[0]; // Acessando pelo indice
+
+      nota = 42;
+      const notaspan = document.querySelector("h2 span");
+      notaspan.innerHTML = `${nota}%`;
+
+      notaspan.className = nota >= 70 ? "nota-verde" : "nota-vermelha";
+    </script>
+  </body>
+</html>

@@ -1,9 +1,9 @@
 // Declarar uma função
-function boasVindas() {
-  console.log("Seja bem-vindo");
+function boasVindas(nome) {
+  console.log(`Seja bem-vindo, ${nome}`);
 }
 
-boasVindas();
+boasVindas("Guilherme");
 
 const adeus = function () {
   console.log("Adeus seres humanos");
