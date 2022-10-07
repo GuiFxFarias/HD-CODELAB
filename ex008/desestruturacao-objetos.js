@@ -5,5 +5,6 @@ const person = {
   senha: "42132412",
 };
 
-const { nome } = person;
-const idade = person.idade;
+const { idade } = person;
+
+console.log(idade);

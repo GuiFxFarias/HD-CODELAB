@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulario de cadastro</h1>
+
+    <h4 id="boas-vindas"></h4>
+
+    <form onsubmit="pegarDados(event)">
+      <label for="inome">Digite seu nome</label>
+      <input type="text" name="nome" id="inome" />
+
+      <label for="iemail">Digite seu email</label>
+      <input type="email" name="email" id="iemail" />
+
+      <label for="isenha">Digite sua senha</label>
+      <input type="password" name="senha" id="isenha" />
+
+      <input
+        type="file"
+        name="arquivo"
+        id="iarquivo"
+        accept="image/*"
+        onchange="lerArquivo()"
+      />
+
+      <img src="" id="imagem" />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script src="formularios2.js"></script>
+    <script>
+      /*
+      function lerArquivo() {
+        const input = document.querySelector("#iarquivo");
+        const { files } = input;
+
+        if (files.length) {
+          const file = files[0];
+          const leitor = new FileReader();
+          leitor.onload = () => {
+            document.querySelector("#imagem").src = leitor.result;
+          };
+          leitor.readAsDataURL(file)
+        }
+      }
+      */
+    </script>
+  </body>
+</html>
