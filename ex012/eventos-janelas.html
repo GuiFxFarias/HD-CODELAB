@@ -12,6 +12,25 @@
     <button type="button" id="pode">Clique</button>
 
     <script>
+      window.addEventListener("load", () => {
+        console.log("Tudo ok");
+      });
+
+      window.addEventListener("resize", (event) => {
+        // Identificar tamanho da janela
+        console.log(event);
+      });
+
+      window.addEventListener("focus", () => {
+        console.log("Voce está aqui na janela");
+      });
+
+      window.addEventListener("blur", () => {
+        console.log("Voce não está aqui na janela");
+      });
+
+      // -----------------------------------------------------
+
       const botoes = document.querySelectorAll("button");
       [...botoes].forEach((botao) => {
         // Criando uma array e usando o forEach para passar em cada item do array

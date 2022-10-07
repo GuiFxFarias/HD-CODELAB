@@ -12,10 +12,32 @@
     <button type="button" id="pode">Clique</button>
 
     <script>
+      //-----------------------Eventos de mouse----------------------------
+
       const botoes = document.querySelectorAll("button");
       [...botoes].forEach((botao) => {
+        botao.addEventListener("mouseenter", (evento) => {
+          console.log(evento.type );
+        });
+        botao.addEventListener("mouseleave", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mousemove", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mousedown", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mouseup", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("click", (evento) => {
+          console.log(evento.type);
+        });
+
         // Criando uma array e usando o forEach para passar em cada item do array
         botao.addEventListener("click", (evento) => {
+          evento.preventDefault();
           switch (evento.target.id) {
             case "pode":
               console.log("Essse aq pode");
