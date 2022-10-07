@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>0</h1>
+    <button type="button" id="a">Desligar contagem</button>
+    <button type="button" id="b">Desligar timeout</button>
+    <script>
+      const timeout = setTimeout(() => {
+        // Delay
+        console.log("Mais um decimo");
+      }, 10000);
+
+      let contador = 0;
+      const contar = setInterval(() => {
+        //Coloca um tempo terminado para executar
+
+        contador++;
+        document.querySelector("h1").innerHTML = `${contador}`;
+        console.log(contador);
+      }, 1000);
+
+      let botCont = document.getElementById("a");
+      let botTime = document.getElementById("b");
+
+      botCont.addEventListener("click", () => {
+        clearInterval(contar);
+      });
+
+      botTime.addEventListener("click", () => {
+        clearTimeout(timeout);
+      });
+    </script>
+  </body>
+</html>
