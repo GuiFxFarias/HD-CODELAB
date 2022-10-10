@@ -18,7 +18,7 @@ function regraDeTres(a, b, c) {
   return dividir(multiplicar(c, b), a);
 }
 
-module.exports = {
+export default {
   somar,
   subtrair,
   dividir,
