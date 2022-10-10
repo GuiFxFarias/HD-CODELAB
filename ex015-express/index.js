@@ -27,6 +27,9 @@ servidor.post("/produtos", (request, response) => {
     if (erro) {
       console.error(erro);
     } else {
+
+
+      
       response.statusCode = 200;
       response.setHeader("Content-type", "application/json"); //conteudo retornado em json para o servidor
       response.json(novoProduto);
