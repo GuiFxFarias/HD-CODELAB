@@ -19,19 +19,19 @@ servidor.get("/produtos", (request, response) => {
   });
 });
 
-servidor.use(express.json());// ler os dados via chaves
-servidor.use(express.urlencoded({extended: true}))// ler dados enviados via post
+servidor.use(express.json()); // ler os dados via chaves
+servidor.use(express.urlencoded({ extended: true })); // ler dados enviados via post
 
 servidor.post("/produtos", (request, response) => {
-  db.insert(request.body, (erro,novoProduto)=>{
-    if(erro){
-      console.error(erro)
-    }else{
-      response.
+  db.insert(request.body, (erro, novoProduto) => {
+    if (erro) {
+      console.error(erro);
+    } else {
+      response.statusCode = 200;
+      response.setHeader("Content-type", "application/json"); //conteudo retornado em json para o servidor
+      response.json(novoProduto);
     }
-    
-
-  })
+  });
   response.json(request.body); //um objeto, json
 });
 
