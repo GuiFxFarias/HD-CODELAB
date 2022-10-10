@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="isoma">Somar</button>
+    <button type="button" id="imulti">Multiplicar</button>
+    <button type="button" id="regra3">Regra de Três</button>
+
+    <script type="module">
+      //usar type module em html
+      // import { somar, multiplicar, regraDeTres } from "./calculos.js"; // usando o destruct
+
+      const soma = document.querySelector("#isoma");
+      const multiplica = document.querySelector("#imulti");
+      const regradeTres = document.querySelector("#regra3");
+
+      soma.addEventListener("click", (e) => {
+        import("./calculos.js").then(({ somar }) => { //importe dinamico com esse tipo de importação
+          console.log(somar(10, 5));
+        });
+      });
+      multiplica.addEventListener("click", (e) => {
+        import("./calculos.js").then(({ multiplicar }) => { //importe dinamico com esse tipo de importação
+          console.log(multiplicar(10, 5));
+        });
+      });
+      regradeTres.addEventListener("click", (e) => {
+        import("./calculos.js").then(({ regraDeTres }) => { //importe dinamico com esse tipo de importação
+          console.log(regraDeTres(10, 2, 2));
+        });
+      });
+    </script>
+  </body>
+</html>
