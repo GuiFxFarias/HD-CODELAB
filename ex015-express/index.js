@@ -14,9 +14,22 @@ servidor.get("/produtos", (request, response) => {
     if (erro) {
       console.error(erro);
     } else {
-      response.json(dados);
+      response.statusCode = 200;
+      response.setHeader("Content-type", "application/json");
     }
   });
+});
+
+servidor.delete("/produtos", (request, response) => {
+  db.remove({ _id: request.params.id }, {multi: false}, ()=> {
+    (erro, registRemove) => {
+      if (erro) {
+        console.error(erro);
+      } else {
+        response.setHeader("Content-type", "application/json");
+        response.status(200).json({ registRemove });
+      }
+    };
 });
 
 servidor.put("/produtos/:id", (request, response) => {
