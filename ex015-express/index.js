@@ -21,7 +21,7 @@ servidor.get("/produtos", (request, response) => {
 });
 
 servidor.delete("/produtos", (request, response) => {
-  db.remove({ _id: request.params.id }, {multi: false}, ()=> {
+  db.remove({ _id: request.params.id }, {}, ()=> {
     (erro, registRemove) => {
       if (erro) {
         console.error(erro);
@@ -50,6 +50,10 @@ servidor.put("/produtos/:id", (request, response) => {
 
 servidor.use(express.json()); // ler os dados via chaves
 servidor.use(express.urlencoded({ extended: true })); // ler dados enviados via post
+servidor.use((request, response, next) => {
+  response.setHeader('Access-Control-Allow-Origin', "*")
+  next
+});
 
 servidor.post("/produtos", (request, response) => {
   db.insert(request.body, (erro, novoProduto) => {
