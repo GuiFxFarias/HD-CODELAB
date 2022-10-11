@@ -19,6 +19,22 @@ servidor.get("/produtos", (request, response) => {
   });
 });
 
+servidor.put("/produtos/:id", (request, response) => {
+  db.update({ _id: request.params.id }, request.body, (erro) => {
+    if (erro) {
+      console.error(erro);
+    } else {
+      response.statusCode = 200;
+      response.setHeader("Content-type", "application/json"); //conteudo retornado em json para o servidor
+      response.json({
+        mensagem: `Produto atualizado com sucesso: ${request.params.id}`,
+      });
+    }
+  });
+  // response.status(200).json(request.params) // pegar o parametro da lista
+  response.status(200).send(request.body);
+});
+
 servidor.use(express.json()); // ler os dados via chaves
 servidor.use(express.urlencoded({ extended: true })); // ler dados enviados via post
 
@@ -27,9 +43,6 @@ servidor.post("/produtos", (request, response) => {
     if (erro) {
       console.error(erro);
     } else {
-
-
-      
       response.statusCode = 200;
       response.setHeader("Content-type", "application/json"); //conteudo retornado em json para o servidor
       response.json(novoProduto);
